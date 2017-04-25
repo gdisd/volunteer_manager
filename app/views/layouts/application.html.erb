@@ -11,14 +11,14 @@
   <body>
 
     <div class="container">
-    <p>
-      <%=
-        if !current_user.nil?
-        current_user.email
-        end
-      %>
-    </p>
-		<%= yield %>
+      <p>
+        <%=
+          if !current_user.nil?
+          current_user.email
+          end
+        %>
+      </p>
+  		<%= yield %>
     </div>
   </body>
 </html>
