@@ -25,6 +25,9 @@ gem 'coffee-rails', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.7'
 # Use autoprefixer thing for CSS
 gem 'autoprefixer-rails'
+gem 'devise'
+gem 'cancancan'
+gem 'rolify'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
