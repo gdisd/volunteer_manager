@@ -9,6 +9,13 @@
   </head>
 
   <body>
+    <p>
+      <%=
+        if !current_user.nil?
+        current_user.email
+        end
+      %>
+    </p>
     <%= yield %>
   </body>
 </html>
