@@ -1,0 +1,13 @@
+
+<h1> Welcome <%= @current_user.email %> </h1>
+
+<h2> Put things you're registered for and a list of classes </h2>
+
+<% @events.each do |event| %>
+
+  <h3><%= link_to event.event_name, event %></h3>
+
+<% end %>
+
+<ul>
+</ul>

@@ -39,5 +39,6 @@
   <%= @event.meetup_url %>
 </p>
 
+<%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/' %> |
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
