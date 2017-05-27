@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :add_ta]
 
   # GET /events
   # GET /events.json
@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+
   end
 
   # GET /events/new
@@ -61,11 +62,19 @@ class EventsController < ApplicationController
     end
   end
 
+  def add_ta
+    @user = current_user
+    @event.users << @user
+    redirect_to '/dashboard', notice: "You are signed up to TA for #{@event.event_name}"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
       @event = Event.find(params[:id])
     end
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
