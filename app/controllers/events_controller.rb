@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy, :add_ta]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :add_ta, :remove_ta]
 
   # GET /events
   # GET /events.json
@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-
+    @user = current_user
   end
 
   # GET /events/new
@@ -71,6 +71,16 @@ class EventsController < ApplicationController
       redirect_to '/dashboard', notice: "You are already signed up to TA for #{@event.event_name}"
     else
       redirect_to '/dashboard', notice: "#{@event.event_name} is no longer taking volunteers"
+    end
+  end
+
+  def remove_ta
+    @user = current_user
+    if @user.is_ta_for?(@event)
+      @event.users.delete(@user)
+      redirect_to '/dashboard', notice: "You have successfully unregistered for #{@event.event_name}"
+    else
+      redirect_to '/dashboard', notice: "You were not signed up to TA for #{@event.event_name}"
     end
   end
 
