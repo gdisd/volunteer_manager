@@ -19,4 +19,9 @@ class User < ApplicationRecord
   def is_ta_for?(event)
     self.events_users.where(event: event).present?
   end
+
+  #STATUSES
+  def set_pending
+    self.update_attribute(:status, 'pending')
+  end
 end
