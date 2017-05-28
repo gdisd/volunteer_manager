@@ -64,11 +64,13 @@ class EventsController < ApplicationController
 
   def add_ta
     @user = current_user
-    if @event.num_tas_still_needed > 0 && !@user.is_ta_for?(@event)
+    if @event.num_tas_still_needed > 0 && !@user.is_ta_for?(@event) && @user.status == 'approved'
       @event.users << @user
       redirect_to '/dashboard', notice: "You are signed up to TA for #{@event.event_name}"
     elsif @user.is_ta_for?(@event)
       redirect_to '/dashboard', notice: "You are already signed up to TA for #{@event.event_name}"
+    elsif @user.status != 'approved'
+      redirect_to '/dashboard', notice: "Your application has not been approved. Please try again once you have received your approval email"
     else
       redirect_to '/dashboard', notice: "#{@event.event_name} is no longer taking volunteers"
     end
