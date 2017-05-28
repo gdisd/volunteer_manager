@@ -1,0 +1,42 @@
+<%= form_for(application) do |f| %>
+  <% if application.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(application.errors.count, "error") %> prohibited this application from being saved:</h2>
+
+      <ul>
+      <% application.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email, required: true, class: 'form-control', value:current_user.email if current_user %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about_you %>
+    <%= f.text_area :about_you %>
+  </div>
+
+  <div class="field">
+    <%= f.label :how_you_found_us %>
+    <%= f.text_area :how_you_found_us %>
+  </div>
+
+  <div class="field">
+    <%= f.label :why_volunteer %>
+    <%= f.text_area :why_volunteer %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

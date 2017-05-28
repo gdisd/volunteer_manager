@@ -14,7 +14,7 @@ RSpec.feature "Dashboard", type: :feature do
       end
       Then 'I can register for an event' do
       # add a class to be able to register
-        visit '/dashboard'
+        visit '/'
         click_link 'Beginning JavaScript'
         click_link 'TA for this class'
         expect(page).to have_content('You are signed up to TA for Beginning JavaScript')

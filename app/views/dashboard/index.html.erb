@@ -1,13 +1,16 @@
 
 <h1> Welcome <%= @current_user.email %> </h1>
+<p><%= @current_user.status %></p>
 
-<h2> Put things you're registered for and a list of classes </h2>
+<% if @current_user.status == 'prospective' %>
+  <p>The form goes here</p>
+  <%= render '/applications/form', application:@application %>
+<% elsif @current_user.status == 'pending' %>
+  <p>Your application has been submitted and is being reviewed. You will be notified shortly if you have been accepted as a TA for GDISD.</p>
+<% elsif @current_user.status == 'approved' %>
+  <h2>Upcoming Classes</h2>
+  <% @events.each do |event| %>
+    <h3><%= link_to event.event_name, event %></h3>
 
-<% @events.each do |event| %>
-
-  <h3><%= link_to event.event_name, event %></h3>
-
+  <% end %>
 <% end %>
-
-<ul>
-</ul>
