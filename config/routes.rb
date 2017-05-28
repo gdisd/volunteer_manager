@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'about/index'
   get '/dashboard' => 'dashboard#index'
   get 'events/:id/add_ta' => 'events#add_ta'
+  get 'events/:id/remove_ta' => 'events#remove_ta'
   root 'welcome#index'
 end
