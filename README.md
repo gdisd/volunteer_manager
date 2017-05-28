@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# GDI San Diego Volunteer Management App
 
-Things you may want to cover:
+How To Run Locally
 
-* Ruby version
+From the directory where you've cloned the repo, use the following commands:
 
-* System dependencies
+bundle install
+bundle exec rake db:create db:migrate db:seed
+rails s
 
-* Configuration
+To Run Tests
 
-* Database creation
+rake rspec spec/[path to test]
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To Deploy:
