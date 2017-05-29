@@ -37,10 +37,12 @@
   <strong>Meetup url:</strong>
   <%= @event.meetup_url %>
 </p>
-<% if @user.is_ta_for?(@event)%>
-  <%= link_to 'Unregister as TA', '/events/' + @event.id.to_s + '/remove_ta/' %> |
-<% else %>
-  <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/' %> |
+<% if !@user.nil? %>
+  <% if @user.is_ta_for?(@event)%>
+    <%= link_to 'Unregister as TA', '/events/' + @event.id.to_s + '/remove_ta/' %> |
+  <% else %>
+    <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/' %> |
+  <% end %>
 <% end %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
