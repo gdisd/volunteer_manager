@@ -28,5 +28,6 @@ users = [
 users.each do |attrs|
   user = User.where(:email => attrs[:email]).first_or_create(:password => attrs[:password], :password_confirmation => attrs[:password])
   user.add_role :admin
+  user.status = 'approved'
   user.save!
 end
