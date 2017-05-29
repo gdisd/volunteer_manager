@@ -29,7 +29,7 @@
                 <% if !current_user.nil? %>
                   <li class="text-uppercase"><a href="<%= dashboard_path %>">Dashboard</a></li>
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, @<%=current_user.email%><span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, <%=current_user.email%><span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <!-- <li class="text-lowercase"><#%= link_to "Profile", profile_path %></li> -->
                       <li class="text-uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></li>
@@ -42,7 +42,7 @@
                 <#%end%> -->
                 <% if current_user.nil? %>
                   <li class="dropdown">
-                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up or Sign In<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li class="text-uppercase"><%= link_to "sign up", new_user_registration_path %></li>
                       <li class="text-uppercase"><%= link_to "sign in", user_session_path %></li>
