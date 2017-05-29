@@ -16,31 +16,39 @@
             <!-- Content for navigation -->
             <div class="collapse navbar-collapse" id="gdisdnav">
               <ul class="nav navbar-nav">
-                <li class="text-uppercase"><a href="/">Home</a></li>
+
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li class="text-uppercase"><a href="https://www.girldevelopit.com/">Girl Develop It</a></li>
                     <li class="text-uppercase"><a href="https://www.girldevelopit.com/about">Our Mission</a></li>
                     <li class="text-uppercase"><a href="<%= about_path %>">Meet our team</a></li>
                   </ul>
                 </li>
-                <li class="text-uppercase"><a href="<%= about_path %>">Get Involved</a></li>
-                <li class="text-uppercase"><a href="<%= events_path %>">Events</a></li>
-
+                <li class="text-uppercase"><a href="<%= get_involved_path %>">Get Involved</a></li>
                 <% if !current_user.nil? %>
-                  <li class="text-uppercase username">Welcome, @<%=current_user.email%></li>
-                  <!-- <li class="text-lowercase"><#%= link_to "Profile", profile_path %></li> -->
-                  <li class="text-uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-                  <li class="text-uppercase"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+                  <li class="text-uppercase"><a href="<%= dashboard_path %>">Dashboard</a></li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome, @<%=current_user.email%><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <!-- <li class="text-lowercase"><#%= link_to "Profile", profile_path %></li> -->
+                      <li class="text-uppercase"><%= link_to "Edit Profile", edit_user_registration_path %></li>
+                      <li class="text-uppercase"><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+                    </ul>
+                  </li>
                 <% end %>
                 <!-- <#%if !current_user.nil? && current_user.has_role?(:admin)%>
                   <li class="text-lowercase lower-nav"><#%= link_to 'Administration', admin_path%></li>
                 <#%end%> -->
                 <% if current_user.nil? %>
-                  <li class="text-uppercase"><%= link_to "sign up", new_user_registration_path %></li>
-                  <li class="text-uppercase"><%= link_to "sign in", user_session_path %></li>
-                  <!-- <li class="text-lowercase lower-nav"><#%= link_to "sign in with meetup", user_meetup_omniauth_authorize_path %></li> -->
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle text-uppercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign In<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li class="text-uppercase"><%= link_to "sign up", new_user_registration_path %></li>
+                      <li class="text-uppercase"><%= link_to "sign in", user_session_path %></li>
+                      <!-- <li class="text-lowercase lower-nav"><#%= link_to "sign in with meetup", user_meetup_omniauth_authorize_path %></li> -->
+                    </ul>
+                  </li>
                 <% end %>
               </ul>
             </div><!--end navigation content -->
