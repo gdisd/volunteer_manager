@@ -2,14 +2,14 @@
 
 <div class="row">
   <div class="col-md-9">
-    <h2>List of Events</h2>
+    <h2>Upcoming Events</h2>
     <table>
       <thead>
         <tr>
           <th>Event name</th>
           <th>Date</th>
           <th>Location</th>
-          <th>Number of tas</th>
+          <th>TA Spots Available</th>
           <th>Description</th>
           <th>Start time</th>
           <th>End time</th>
@@ -20,25 +20,38 @@
 
       <tbody>
         <% @events.each do |event| %>
-          <tr>
-            <td><%= link_to event.event_name, event %></td>
-            <td><%= event.date %></td>
-            <td><%= event.location %></td>
-            <td><%= event.number_of_tas %></td>
-            <td><%= event.description %></td>
-            <td><%= event.start_time %></td>
-            <td><%= event.end_time %></td>
-            <td><%= event.meetup_url %></td>
-            <td><%= link_to 'Show', event %></td>
-            <td><%= link_to 'Edit', edit_event_path(event) %></td>
-            <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
+          <% if event.date > Date.today %>
+            <tr>
+              <td><%= link_to event.event_name, event %></td>
+              <td><%= event.date %></td>
+              <td><%= event.location %></td>
+              <td><%= event.num_tas_still_needed %></td>
+              <td><%= event.description %></td>
+              <td><%= event.start_time %></td>
+              <td><%= event.end_time %></td>
+              <td><%= event.meetup_url %></td>
+              <%if !current_user.nil? && current_user.has_role?(:admin)%>
+                <td><%= link_to 'Show', event %></td>
+                <td><%= link_to 'Edit', edit_event_path(event) %></td>
+                <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <% end %>
+            </tr>
+          <% end %>
         <% end %>
       </tbody>
     </table>
-    <%= link_to "Add Event", new_event_path, class: "btn btn-default" %>
+    <%if !current_user.nil? && current_user.has_role?(:admin)%>
+      <%= link_to "Add Event", new_event_path, class: "btn btn-default" %>
+    <% end %>
   </div>
   <div class="col-md-3">
-    <h2>Sign Up to volunteer</h2>
-    <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default" %>
+    <% if current_user.nil? %>
+      <h3>New to Girl Develop It San Diego?</h3>
+      <h4>Sign Up to volunteer</h4>
+      <p>Start here by creating a new account</p>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default" %>
+      <h3>Already signed up?</h3>
+      <h4>Log in to your account</h4>
+      <%= link_to "Sign In", user_session_path, class: "btn btn-default" %>
+    <% end %>
   </div>

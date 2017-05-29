@@ -1,0 +1,20 @@
+<h1>Get Involved with GDI San Diego</h1>
+
+<div class="row">
+  <div class="col-md-9">
+    <h2>3 Easy Steps to Becomming a TA for Girl Develop It</h2>
+    <h3>1. Create you account</h3>
+    <h3>2. Complete your questionnaire</h3>
+    <h3>3. Sign up for a class</h3>  
+  </div>
+  <div class="col-md-3">
+    <% if current_user.nil? %>
+      <h3>New to Girl Develop It San Diego?</h3>
+      <h4>Sign Up to volunteer</h4>
+      <p>Start here by creating a new account</p>
+      <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default" %>
+      <h3>Already signed up?</h3>
+      <h4>Log in to your account</h4>
+      <%= link_to "Sign In", user_session_path, class: "btn btn-default" %>
+    <% end %>
+  </div>

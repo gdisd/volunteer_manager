@@ -4,4 +4,7 @@ class WelcomeController < ApplicationController
     @events = Event.all
   end
 
+  def get_involved
+  end
+
 end
