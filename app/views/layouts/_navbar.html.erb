@@ -17,7 +17,15 @@
             <div class="collapse navbar-collapse" id="gdisdnav">
               <ul class="nav navbar-nav">
                 <li class="text-uppercase"><a href="/">Home</a></li>
-                <li class="text-uppercase"><a href="<%= about_path %>">About</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li class="text-uppercase"><a href="https://www.girldevelopit.com/">Girl Develop It</a></li>
+                    <li class="text-uppercase"><a href="https://www.girldevelopit.com/about">Our Mission</a></li>
+                    <li class="text-uppercase"><a href="<%= about_path %>">Meet our team</a></li>
+                  </ul>
+                </li>
+                <li class="text-uppercase"><a href="<%= about_path %>">Get Involved</a></li>
                 <li class="text-uppercase"><a href="<%= events_path %>">Events</a></li>
 
                 <% if !current_user.nil? %>
