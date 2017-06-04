@@ -39,10 +39,10 @@
 </p>
 <% if !@user.nil? %>
   <% if @user.is_ta_for?(@event)%>
-    <%= link_to 'Unregister as TA', '/events/' + @event.id.to_s + '/remove_ta/' %> |
+    <%= link_to 'Unregister as TA', '/events/' + @event.id.to_s + '/remove_ta/', class: 'btn btn-sm btn-info' %> |
   <% else %>
-    <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/' %> |
+    <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/', class: 'btn btn-sm btn-info' %> |
   <% end %>
 <% end %>
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %> |
+<%= link_to 'Back', events_path, class: 'btn btn-sm btn-default' %>

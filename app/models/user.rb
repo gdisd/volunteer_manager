@@ -24,4 +24,8 @@ class User < ApplicationRecord
   def set_pending
     self.update_attribute(:status, 'pending')
   end
+
+  def set_approved
+    self.update_attribute(:status, 'approved')
+  end
 end

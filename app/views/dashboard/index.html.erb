@@ -1,6 +1,5 @@
 
 <h1> Welcome <%= @current_user.email %> </h1>
-<p><%= @current_user.status %></p>
 
 <% if @current_user.status == 'prospective' %>
   <p>Please complete our teaching assistant questionnaire.  </p>
@@ -8,8 +7,9 @@
 <% elsif @current_user.status == 'pending' %>
   <p>Your application has been submitted and is being reviewed. You will be notified shortly if you have been accepted as a TA for GDISD.</p>
 <% elsif @current_user.status == 'approved' %>
-  <h2>Upcoming Classes</h2>
-  <% @events.each do |event| %>
-    <h3><%= link_to event.event_name, event %></h3>
-  <% end %>
+  <h3>Select a class to register as a TA</h3>
+  <%= render '/events/events_list', events:@events %>
+<% end %>
+<% if !current_user.nil? && current_user.has_role?(:admin)%>
+  <%= render 'users_list', users:@users %>
 <% end %>

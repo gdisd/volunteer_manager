@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/about' => 'about#index'
   get '/dashboard' => 'dashboard#index'
+  get '/dashboard/set_user_status_to_approved'
   get 'events/:id/add_ta' => 'events#add_ta'
   get 'events/:id/remove_ta' => 'events#remove_ta'
   get 'get_involved' => 'welcome#get_involved'

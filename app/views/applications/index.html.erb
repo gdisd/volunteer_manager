@@ -2,7 +2,7 @@
 
 <h1>Applications</h1>
 
-<table>
+<table class="table-responsive">
   <thead>
     <tr>
       <th>Name</th>
@@ -22,9 +22,9 @@
         <td><%= application.about_you %></td>
         <td><%= application.how_you_found_us %></td>
         <td><%= application.why_volunteer %></td>
-        <td><%= link_to 'Show', application %></td>
-        <td><%= link_to 'Edit', edit_application_path(application) %></td>
-        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', application, class: 'btn btn-sm btn-info' %></td>
+        <td><%= link_to 'Edit', edit_application_path(application), class: 'btn btn-sm btn-warning' %></td>
+        <td><%= link_to 'Destroy', application, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
