@@ -15,3 +15,7 @@ To Run Tests
 rake rspec spec/[path to test]
 
 To Deploy:
+
+
+To seed database:
+rake db:seed
