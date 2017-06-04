@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
 
   <div class="field">
@@ -23,20 +23,20 @@
 
   <div class="field">
     <%= f.label :about_you %>
-    <%= f.text_area :about_you %>
+    <%= f.text_area :about_you, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :how_you_found_us %>
-    <%= f.text_area :how_you_found_us %>
+    <%= f.text_area :how_you_found_us, class: 'form-control' %>
   </div>
 
   <div class="field">
     <%= f.label :why_volunteer %>
-    <%= f.text_area :why_volunteer %>
+    <%= f.text_area :why_volunteer, class: 'form-control' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit, class: 'btn btn-default' %>
   </div>
 <% end %>

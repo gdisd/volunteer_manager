@@ -1,0 +1,20 @@
+<div class="container">
+  <h2>Current Volunteers</h2>
+  <% @users.each do |user| %>
+    <% if user.status == 'pending' %>
+      <p>
+        <%= user.email %>,
+        <%= user.status %>,
+        <%= link_to 'Update Status to Approved', { controller: :dashboard, action: :set_user_status_to_approved, user_id: user.id }, class: "btn btn-sm btn-success" %>
+      </p>
+    <% end %>
+  <% end %>
+  <% @users.each do |user| %>
+    <% if user.status != 'pending'  %>
+      <p>
+        <%= user.email %>,
+        <%= user.status %>
+      </p>
+    <% end %>
+  <% end %>
+</div>

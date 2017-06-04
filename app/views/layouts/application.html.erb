@@ -13,13 +13,6 @@
     <div class="container">
     <!-- add alert and notices for Devise installation -->
       <div id="notice"><%= notice %></div>
-      <p>
-        <%=
-          if !current_user.nil?
-          current_user.email
-          end
-        %>
-      </p>
   		<%= yield %>
     </div>
   </body>
