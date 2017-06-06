@@ -44,5 +44,14 @@
     <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/', class: 'btn btn-sm btn-info' %> |
   <% end %>
 <% end %>
+
+<% if !current_user.nil? && current_user.has_role?(:admin) %>
+  <h3>List of TA's signed up to help</h3>
+  <% @event_users.each do |eu| %>
+    <ul>
+      <li><%= eu.email %></li>
+    </ul>
+  <% end %>
+<% end %>
 <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %> |
 <%= link_to 'Back', events_path, class: 'btn btn-sm btn-default' %>
