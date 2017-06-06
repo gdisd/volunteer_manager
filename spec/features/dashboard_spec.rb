@@ -7,11 +7,7 @@ RSpec.feature "Dashboard", type: :feature do
         # part of sign_up command
       end
       Then 'I need a class to register for' do
-        create_admin
-        sign_in('admin@admin.com', 'adminadmin')
-        add_class('Beginning JavaScript', 'Qualcomm AY', '4', 'This is a beginning JavaScript Class. Bring a laptop and a learning attitude.','9:00 a.m.', '4:00 p.m.', 'http://www.meetup.com')
-        click_link 'Welcome, admin@admin.com'
-        sign_out
+        create_event
       end
       Then 'I can sign up as user' do
         create_approved_user('test@test.com', 'password')
