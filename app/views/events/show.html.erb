@@ -37,6 +37,7 @@
   <strong>Meetup url:</strong>
   <%= @event.meetup_url %>
 </p>
+
 <% if !@user.nil? %>
   <% if @user.is_ta_for?(@event)%>
     <%= link_to 'Unregister as TA', '/events/' + @event.id.to_s + '/remove_ta/', class: 'btn btn-sm btn-info' %> |
@@ -44,14 +45,15 @@
     <%= link_to 'TA for this class', '/events/' + @event.id.to_s + '/add_ta/', class: 'btn btn-sm btn-info' %> |
   <% end %>
 <% end %>
-
+<%= link_to 'Back', events_path, class: 'btn btn-sm btn-default' %>
 <% if !current_user.nil? && current_user.has_role?(:admin) %>
+  | <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %> 
   <h3>List of TA's signed up to help</h3>
   <% @event_users.each do |eu| %>
     <ul>
       <li><%= eu.email %></li>
     </ul>
   <% end %>
+
+
 <% end %>
-<%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %> |
-<%= link_to 'Back', events_path, class: 'btn btn-sm btn-default' %>
