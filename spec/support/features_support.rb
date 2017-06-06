@@ -33,6 +33,9 @@ module FeatureSupport
     fill_in 'event[meetup_url]', with: url
     click_button 'Create Event'
   end
+  def create_event
+    event = Event.create! :event_name => 'Beginning JavaScript', :date => Date.today + 3.days, :location => 'Qualcomm AY', :number_of_tas => '4', :description => 'This is a beginning JavaScript Class. Bring a laptop and a learning attitude.', :start_time => '9:00 a.m.', :end_time => '4:00 p.m.', :meetup_url => 'http://www.meetup.com'
+  end
 
   def create_admin
     user = User.create! :email => 'admin@admin.com', :password => 'adminadmin', :password_confirmation => 'adminadmin', :status => 'approved'
