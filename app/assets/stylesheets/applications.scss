@@ -4,10 +4,12 @@
 @import "font-awesome";
 
 body{
-  font-family: "Roboto", Helvetica, Arial, sans-serif ;
+  font-family: "Roboto", Helvetica, Arial, sans-serif !important ;
 }
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+
 }
 .opener{
   text-align: center;
