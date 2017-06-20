@@ -9,54 +9,51 @@ body{
 h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-
 }
-.opener{
-  text-align: center;
-}
-.opener-h1, h1 {
-  text-align: center;
-  color: #2a4758;
-  font-size: 3.5rem;
+h1{
+  text-align: center !important;
+  color: #2a4758 !important;
+  font-size: 3.5rem !important;
   font-weight: 400;
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
   height: auto;
   width: 100%;
 }
-.opener h2{
-  font-size: 2rem;
+h2{
+  font-size: 2rem !important;
+  color: #282828;
+  font-weight: 400;
+  letter-spacing: .1rem;
+  line-height: 1.8rem;
+  padding-bottom: 6px;
+  border-bottom:  #d8ae64;
+  border-width: 0px 0px 7px 0px;
+  border-style: double;
+  display: inline-table;
+}
+h3{
+  font-size: 1.5rem !important;
   color: #282828;
   font-weight: 400;
   letter-spacing: .1rem;
   line-height: 1.8rem;
 }
-.underlined-headline hr {
-    width: 100%;
-    border-top: 2px solid #d8ae64;
-    border-bottom: 2px solid #d8ae64;
-    margin-bottom: 30px;
-    height: 6px;
-}
-.opener h3 {
-  font-size: 1.5rem;
+h4{
+  font-size: 1rem !important;
   color: #282828;
   font-weight: 400;
   letter-spacing: .1rem;
   line-height: 1.8rem;
 }
-.opener h4{
-  font-size: 1rem;
-  color: #282828;
-  font-weight: 400;
-  letter-spacing: .1rem;
-  line-height: 1.8rem;
-}
-.opener p{
+p{
   font-size: 1.025rem;
   font-weight: 300;
   letter-spacing: .05rem;
   color: #2d2e2e;
   line-height: 1.5rem;
+}
+.opener{
+  text-align: center;
 }
 .btn.btn-default{
   text-transform: uppercase;

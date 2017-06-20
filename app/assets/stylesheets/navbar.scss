@@ -17,7 +17,6 @@
   padding: 20px 0px;
   font-size: 18px;
   line-height: 20px;
-  font-weight: 300;
   height: auto;
 }
 .logo{
@@ -28,32 +27,32 @@
   float: right;
 }
 .navbar-default .navbar-nav > li > a {
-    color: white !important;
-    margin-right: 5px;
+  color: white !important;
+  margin-right: 5px;
 }
 .navbar-default .navbar-nav > li > a:hover{
-    background-color: #282828 !important;
-    color: #fbcfc6 !important;
-    height: 113px;
+  background-color: #282828 !important;
+  color: #fbcfc6 !important;
+  height: 113px;
 }
 .drop-hr{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border: 0;
-    border-top: 1px solid #fbcfc6;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 0;
+  border-top: 1px solid #fbcfc6;
 }
 .nav.navbar-nav li a {
-    color: white;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 18px;
-    letter-spacing: .05rem;
-    padding: 48px 16px 48px 16px;
+  color: white;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: .05rem;
+  padding: 48px 16px 48px 16px;
 }
 .navbar-nav > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: 23px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 23px;
 }
 .dropdown-menu > li > a {
   margin-top: -5px;
@@ -67,5 +66,5 @@
   color: #fbcfc6 !important;
 }
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #282828 !important;
+  background-color: #282828 !important;
 }
