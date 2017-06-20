@@ -23,7 +23,9 @@
                   <a href="#" class="dropdown-toggle text-lowercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li class="text-lowercase"><a href="https://www.girldevelopit.com/">Girl Develop It</a></li>
+                      <hr class="drop-hr">
                     <li class="text-lowercase"><a href="https://www.girldevelopit.com/about">Our Mission</a></li>
+                      <hr class="drop-hr">
                     <li class="text-lowercase"><a href="<%= about_path %>">Meet our team</a></li>
                   </ul>
                 </li>
@@ -47,6 +49,7 @@
                     <a href="#" class="dropdown-toggle text-lowercase" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sign Up or Sign In<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li class="text-lowercase"><%= link_to "sign up", new_user_registration_path %></li>
+                        <hr class="drop-hr">
                       <li class="text-lowercase"><%= link_to "sign in", user_session_path %></li>
                       <!-- <li class="text-lowercase lower-nav"><#%= link_to "sign in with meetup", user_meetup_omniauth_authorize_path %></li> -->
                     </ul>
