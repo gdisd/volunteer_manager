@@ -52,7 +52,8 @@
                       <li class="text-lowercase"><%= link_to "sign up", new_user_registration_path %></li>
                         <hr class="drop-hr">
                       <li class="text-lowercase"><%= link_to "sign in", user_session_path %></li>
-                      <!-- <li class="text-lowercase lower-nav"><#%= link_to "sign in with meetup", user_meetup_omniauth_authorize_path %></li> -->
+                        <hr class="drop-hr">
+                      <li class="text-lowercase lower-nav"><%= link_to "sign in with meetup", user_meetup_omniauth_authorize_path %></li>
                     </ul>
                   </li>
                 <% end %>

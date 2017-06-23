@@ -274,4 +274,7 @@ Devise.setup do |config|
   # When using OmniAuth, Devise cannot automatically set OmniAuth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+
+  config.omniauth :meetup, "m1tchme69sqi61qgou8isloo3p", "e8oi9etdrjl8j12sb2ea4fc8t", callback_url: "http://localhost:3000/users/auth/meetup/callback"
 end
