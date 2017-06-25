@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+      body {
+        padding: 0 20px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>New TA Application for GDI</h1>
+    <p>A new teaching assistant has registered. Please login to your Dashboard to approve their application</p>
+    <h3>Teaching Assistant:</h3>
+    <p><%= @name %></p>
+    <h3>Email:</h3>
+    <p><%= @email %></p>
+    <h3>About you:</h3>
+    <p><%= @about_you %></p>
+    <h3>How you found us:</h3>
+    <p><%= @how_you_found_us %></p>
+    <h3>Why you want to volunteer:</h3>
+    <%= @why_volunteer %></p>
+  </body>
+</html>
