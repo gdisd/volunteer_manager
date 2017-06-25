@@ -15,7 +15,7 @@ rails s
 
 To Run Tests
 
-rake rspec spec/[path to test]
+rspec spec/[path to test]
 
 To Deploy:
 TBD
