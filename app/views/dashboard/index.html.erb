@@ -1,5 +1,5 @@
 
-<h1> Welcome <%= @current_user.email %> </h1>
+<h1> Welcome <%= @current_user.email %><%= @current_user.name %> </h1>
 
 <% if @current_user.status == 'prospective' %>
   <p>Please complete our teaching assistant questionnaire.  </p>
