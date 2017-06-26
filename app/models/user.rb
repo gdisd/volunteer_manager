@@ -36,10 +36,10 @@ class User < ApplicationRecord
     # call super(the overwritten function), it will return a resource and in this case you are
     # naming it 'user' in the block
     super.tap do |user|
-      # if extra information was provided by facebook when user logged in, assign whatever comes in
-      # session["devise.facebook_data"]["extra"]["raw_info"] to 'data' variable
+      # if extra information was provided by meetup when user logged in, assign whatever comes in
+      # session["devise.meetup_data"]["extra"]["raw_info"] to 'data' variable
       if data = session["devise.meetup_data"] && session["devise.meetup_data"]["extra"]["raw_info"]
-        # assign 'email' given by facebook in case the 'user' object doesn't have one yet
+        # assign 'email' given by meetup in case the 'user' object doesn't have one yet
         user.email = data["email"] if user.email.blank?
       end
     end
