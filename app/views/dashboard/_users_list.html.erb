@@ -3,7 +3,7 @@
   <% @users.each do |user| %>
     <% if user.status == 'pending' %>
       <p>
-        <%= user.email %>,
+        <%= user.email %><%= user.name %>,
         <%= user.status %>,
         <%= link_to 'Update Status to Approved', { controller: :dashboard, action: :set_user_status_to_approved, user_id: user.id }, class: "btn btn-sm btn-success" %>
       </p>
@@ -12,7 +12,7 @@
   <% @users.each do |user| %>
     <% if user.status != 'pending'  %>
       <p>
-        <%= user.email %>,
+        <%= user.email %><%= user.name %>,
         <%= user.status %>
       </p>
     <% end %>

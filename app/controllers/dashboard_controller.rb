@@ -16,6 +16,6 @@ class DashboardController < ApplicationController
   def set_user_status_to_approved
     @user = User.find(params[:user_id])
     @user.set_approved
-    redirect_to '/dashboard', notice: "#{@user.email} is now approved for volunteering as a TA"
+    redirect_to '/dashboard', notice: "#{@user.email} #{@user.name} is now approved for volunteering as a TA"
   end
 end
