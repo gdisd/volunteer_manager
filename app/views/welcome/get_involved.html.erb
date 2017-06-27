@@ -18,6 +18,9 @@
       <h3>Already signed up?</h3>
       <h4>Log in to your account</h4>
       <%= link_to "Sign In", user_session_path, class: "btn btn-default" %>
+      <h3>Have a Meetup Account?</h3>
+      <h4>Sign in using your meetup.com account</h4>
+      <%= link_to "Sign In With Meetup!", user_meetup_omniauth_authorize_path, class: "btn btn-default" %>
     <% end %>
   </div>
 </div>
