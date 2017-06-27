@@ -275,6 +275,18 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
+# Meetup API info
+#
+# "https://secure.meetup.com/meetup_api/oauth_consumers/"
+# Login_information:
+#   Email_address: "leaann@notch8.com"
+#   Password:      "password"
+#
+# App_Name:      "Girl Develop It SD"
+# Key:           "pgskp769f4jkcv6e0au2ctmsoe"
+# Secret:        "pgskp769f4jkcv6e0au2ctmsoe"
+# Website:       "https://www.girldevelopit.com/"
+# Redirect_URI:  "http://localhost:3000/users/auth/meetup/callback"
 
-  config.omniauth :meetup, "m1tchme69sqi61qgou8isloo3p", "e8oi9etdrjl8j12sb2ea4fc8t", callback_url: "http://localhost:3000/users/auth/meetup/callback"
+  config.omniauth :meetup, "a34ks170klp93jk7k9j62ha0u7", "pgskp769f4jkcv6e0au2ctmsoe", callback_url: "http://localhost:3000/users/auth/meetup/callback"
 end
