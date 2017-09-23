@@ -16,7 +16,7 @@ module FeatureSupport
     fill_in 'user[password]', with: password
     click_button 'Log in'
   end
-
+  
   def sign_out
     click_link 'Sign Out'
   end
