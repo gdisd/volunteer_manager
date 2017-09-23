@@ -29,6 +29,8 @@ class ApplicationsController < ApplicationController
     respond_to do |format|
       if @application.save
         @application.user.set_pending # update user status to pending
+        #send admin an email notification that there is a new applicant
+        AdminMailer.approve_applicant_email(params[:name], params[:email], params[:about_you], params[:how_you_found_us], params[:why_volunteer]).deliver
         format.html { redirect_to dashboard_path, notice: 'Application was successfully created.' }
         format.json { render :show, status: :created, location: @application }
       else

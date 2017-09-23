@@ -16,6 +16,8 @@ class DashboardController < ApplicationController
   def set_user_status_to_approved
     @user = User.find(params[:user_id])
     @user.set_approved
+    #send user an email notification that their application has been accepted
+    ApplicantApprovedMailer.applicant_approved_notice_email(params[:name], params[:email]).deliver
     redirect_to '/dashboard', notice: "#{@user.email} #{@user.name} is now approved for volunteering as a TA"
   end
 end

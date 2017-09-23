@@ -46,8 +46,8 @@
   <% end %>
 <% end %>
 <%= link_to 'Back', events_path, class: 'btn btn-sm btn-default' %>
-<% if !current_user.nil? && current_user.has_role?(:admin) %>
-  | <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %> 
+<% if !current_user.nil? && (current_user.has_role?(:admin) || current_user.is_ta_for?(@event)) %>
+  | <%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-sm btn-warning' %>
   <h3>List of TA's signed up to help</h3>
   <% @event_users.each do |eu| %>
     <ul>
